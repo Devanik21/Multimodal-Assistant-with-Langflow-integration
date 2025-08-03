@@ -984,11 +984,11 @@ def render_api_status():
     
     with col1:
         # Simulate API status check
-        api_status = "🟢 Online" if st.session_state.assistant.genai_client else "🔴 Not Connected"
+        api_status = " Online" if st.session_state.assistant.genai_client else "🔴 Not Connected"
         st.metric("Gemini API", api_status)
     
     with col2:
-        st.metric("Pipeline Status", "🟢 Operational")
+        st.metric("Pipeline Status", " Operational")
         
     with col3:
         st.metric("Response Time", "<1.0s")
@@ -1300,11 +1300,11 @@ def main():
         
         # System health indicators
         health_metrics = {
-            "API Latency": ("🟢", "0.8s", "Excellent"),
-            "Pipeline Throughput": ("🟢", "15/min", "Optimal"),
-            "Error Rate": ("🟢", "0.1%", "Excellent"),
+            "API Latency": ("", "0.8s", "Excellent"),
+            "Pipeline Throughput": ("", "15/min", "Optimal"),
+            "Error Rate": ("", "0.1%", "Excellent"),
             "Memory Usage": ("🟡", "78%", "Good"),
-            "Cache Hit Rate": ("🟢", "94%", "Excellent")
+            "Cache Hit Rate": ("", "94%", "Excellent")
         }
         
         cols = st.columns(len(health_metrics))
