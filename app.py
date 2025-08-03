@@ -610,7 +610,7 @@ def main():
         col1, col2, col3 = st.columns([1, 1, 2])
         
         with col1:
-            process_btn = st.button("🚀 Process Query", type="primary")
+            process_btn = st.button("♾️ Process Query", type="primary")
             
         with col2:
             if st.button("🔄 Clear"):
@@ -890,7 +890,7 @@ Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 """
 
     report += f"""
-## 🚀 System Performance
+## 🎉 System Performance
 
 ### Technical Metrics
 - **API Response Time**: Excellent (<1s average)
