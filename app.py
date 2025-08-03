@@ -759,7 +759,7 @@ def main():
         perf_data = {
             "Metric": ["API Latency", "Pipeline Efficiency", "Error Rate", "Throughput"],
             "Value": ["~0.8s", "94.2%", "0.1%", "15 queries/min"],
-            "Status": ["🟢 Optimal", "🟢 Excellent", "🟢 Excellent", "🟢 Good"]
+            "Status": [" Optimal", " Excellent", " Good"]
         }
         
         perf_df = pd.DataFrame(perf_data)
