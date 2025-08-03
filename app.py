@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 # Page configuration
 st.set_page_config(
-    page_title="IntelliVision Pro - Multimodal Q&A Assistant",
+    page_title="IntelliVision - Multimodal Q&A Assistant",
     page_icon="🧠",
     layout="wide",
     initial_sidebar_state="expanded"
