@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 # Page configuration
 st.set_page_config(
     page_title="IntelliVision - Multimodal Q&A Assistant",
-    page_icon="🧠",
+    page_icon="✨",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -572,7 +572,7 @@ def main():
     # Header
     st.markdown("""
     <div class="main-header">
-        <h1>🧠 IntelliVision </h1>
+        <h1>🪄 IntelliVision </h1>
         <p>Next-Generation Multimodal Q&A Assistant powered by Langflow & Gemini</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1051,7 +1051,7 @@ def render_footer():
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white; margin-top: 2rem;">
-        <h4>🧠 IntelliVision </h4>
+        <h4>🔮 IntelliVision </h4>
         <p>Next-Generation Multimodal Q&A Assistant</p>
         <p><small>Powered by Langflow Architecture & Google Gemini AI | Built with Streamlit</small></p>
     </div>
