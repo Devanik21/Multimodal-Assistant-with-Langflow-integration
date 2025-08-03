@@ -556,7 +556,7 @@ def render_conversation_history(assistant: MultimodalQAAssistant):
             
             # AI response
             st.markdown(f'<div class="chat-message ai-message">', unsafe_allow_html=True)
-            st.markdown(f"**IntelliVision Pro:** {item['response']}")
+            st.markdown(f"**IntelliVision :** {item['response']}")
             st.markdown(f"*⏱️ Response time: {item['processing_time']:.2f}s*")
             st.markdown('</div>', unsafe_allow_html=True)
             
@@ -572,7 +572,7 @@ def main():
     # Header
     st.markdown("""
     <div class="main-header">
-        <h1>🧠 IntelliVision Pro</h1>
+        <h1>🧠 IntelliVision </h1>
         <p>Next-Generation Multimodal Q&A Assistant powered by Langflow & Gemini</p>
     </div>
     """, unsafe_allow_html=True)
