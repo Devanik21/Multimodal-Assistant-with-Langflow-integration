@@ -1001,7 +1001,7 @@ def render_usage_guide():
     """Render usage guide and tips"""
     st.markdown("### 💡 Usage Guide")
     
-    with st.expander("🚀 Getting Started"):
+    with st.expander("🎉 Getting Started"):
         st.markdown("""
         1. **Add your Gemini API Key** in the sidebar to enable AI processing
         2. **Upload an image** (optional) using the file uploader
@@ -1149,7 +1149,7 @@ def main():
         col1, col2, col3, col4 = st.columns([2, 1, 1, 2])
         
         with col1:
-            process_btn = st.button("🚀 Process Query", type="primary", use_container_width=True)
+            process_btn = st.button("♾️ Process Query", type="primary", use_container_width=True)
             
         with col2:
             if st.button("🔄 Clear", use_container_width=True):
