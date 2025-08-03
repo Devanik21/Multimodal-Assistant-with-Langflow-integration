@@ -253,7 +253,7 @@ class MultimodalQAAssistant:
         """Initialize Gemini API client"""
         try:
             genai.configure(api_key=api_key)
-            self.genai_client = genai.GenerativeModel('gemini-1.5-pro')
+            self.genai_client = genai.GenerativeModel('gemini-2.5-flash')
             return True
         except Exception as e:
             logger.error(f"Failed to initialize Gemini: {e}")
@@ -1089,7 +1089,7 @@ def main():
         with st.spinner("Initializing Gemini API..."):
             if st.session_state.assistant.initialize_gemini(api_key):
                 st.success("✅ Gemini API initialized successfully!")
-                st.balloons()
+               # st.balloons()
             else:
                 st.error("❌ Failed to initialize Gemini API. Please check your API key.")
     
