@@ -1071,7 +1071,7 @@ def main():
     # Header
     st.markdown("""
     <div class="main-header">
-        <h1>🧠 IntelliVision</h1>
+        <h1>🪄 IntelliVision</h1>
         <p>Next-Generation Multimodal Q&A Assistant powered by Langflow & Gemini</p>
     </div>
     """, unsafe_allow_html=True)
