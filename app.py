@@ -253,7 +253,7 @@ class MultimodalQAAssistant:
         """Initialize Gemini API client"""
         try:
             genai.configure(api_key=api_key)
-            self.genai_client = genai.GenerativeModel('gemma-3n-e4b-it')
+            self.genai_client = genai.GenerativeModel('gemma-3-27b-it')
             return True
         except Exception as e:
             logger.error(f"Failed to initialize Gemini: {e}")
