@@ -1,284 +1,191 @@
-# 🧠 IntelliVision Pro - Multimodal Q&A Assistant
+# Multimodal Assistant With Langflow Integration
 
-A groundbreaking Streamlit application that combines Langflow pipeline architecture with Google Gemini AI to deliver professional multimodal question-answering capabilities.
+![Language](https://img.shields.io/badge/Language-Python-3776AB?style=flat-square) ![Stars](https://img.shields.io/github/stars/Devanik21/Multimodal-Assistant-with-Langflow-integration?style=flat-square&color=yellow) ![Forks](https://img.shields.io/github/forks/Devanik21/Multimodal-Assistant-with-Langflow-integration?style=flat-square&color=blue) ![Author](https://img.shields.io/badge/Author-Devanik21-black?style=flat-square&logo=github) ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![Python](https://img.shields.io/badge/python-3.8+-green.svg)
-![Streamlit](https://img.shields.io/badge/streamlit-1.28+-red.svg)
-![License](https://img.shields.io/badge/license-MIT-yellow.svg)
-
-## ✨ Features
-
-### 🎯 Core Capabilities
-- **Multimodal Processing**: Analyze images with natural language questions
-- **Intelligent Q&A**: Advanced text-based queries with contextual responses
-- **Real-time Pipeline Visualization**: Langflow-inspired processing nodes
-- **Professional Analytics**: Comprehensive performance tracking and insights
-
-### 🔄 Langflow Integration
-- **Visual Pipeline Architecture**: Interactive node execution tracking
-- **Real-time Processing Visualization**: Monitor data flow through pipeline stages
-- **Performance Analytics**: Node timing, success rates, and optimization metrics
-- **Pipeline Builder Interface**: Conceptual drag-and-drop node management
-
-### 📊 Advanced Analytics
-- **Usage Statistics**: Query counts, success rates, response times
-- **Performance Monitoring**: System health, API latency, throughput metrics
-- **Conversation Insights**: Word frequency analysis, topic clustering
-- **Export Capabilities**: JSON, analytics data, comprehensive reports
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Python 3.8+
-- Google Gemini API key
-- Internet connection
-
-### Installation
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/your-username/intellivision-pro.git
-cd intellivision-pro
-```
-
-2. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-3. **Run the application**
-```bash
-streamlit run app.py
-```
-
-4. **Open your browser** to `http://localhost:8501`
-
-### Dependencies
-```txt
-streamlit>=1.28.0
-google-generativeai>=0.3.0
-pillow>=9.0.0
-pandas>=1.5.0
-plotly>=5.15.0
-```
-
-## 🔧 Configuration
-
-### API Setup
-1. Get your Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Enter the API key in the sidebar configuration panel
-3. The system will automatically initialize and validate the connection
-
-### Pipeline Settings
-- **Temperature**: Control response creativity (0.0-1.0)
-- **Max Tokens**: Set response length limits (100-2000)
-- **Pipeline Mode**: Choose from Standard/Advanced/Debug modes
-- **Visualization**: Toggle pipeline and node detail displays
-
-## 📖 Usage Guide
-
-### Basic Query Processing
-
-**Text-Only Questions:**
-```
-Example: "Explain quantum computing in simple terms"
-```
-
-**Image-Based Questions:**
-1. Upload an image (PNG, JPG, GIF, BMP, WebP)
-2. Ask specific questions about the image
-```
-Examples:
-- "What objects are visible in this image?"
-- "Extract any text from this picture"
-- "Describe the scene and atmosphere"
-```
-
-### Advanced Features
-
-**Quick Actions:**
-- Use pre-defined question templates
-- Generate random sample questions
-- Clear interface with one click
-
-**Pipeline Monitoring:**
-- View real-time node execution
-- Monitor processing times
-- Track success rates and errors
-
-**Analytics Dashboard:**
-- Review query performance metrics
-- Export conversation history
-- Generate comprehensive reports
-
-## 🏗️ Architecture
-
-### Langflow Pipeline Components
-
-```mermaid
-graph LR
-    A[Image Upload] --> B[Image Processor]
-    C[Text Input] --> D[Text Processor]
-    B --> E[Multimodal Integrator]
-    D --> E
-    E --> F[Gemini AI Engine]
-    F --> G[Response Output]
-```
-
-**Processing Nodes:**
-- **Image Processor**: Visual analysis, feature extraction, object detection
-- **Text Processor**: NLP processing, intent classification, entity extraction
-- **Multimodal Integrator**: Context fusion, relevance scoring
-- **AI Engine**: Response generation using Gemini models
-
-### System Architecture
-```
-├── Frontend (Streamlit)
-│   ├── Query Interface
-│   ├── Pipeline Visualization
-│   ├── Analytics Dashboard
-│   └── Configuration Panel
-├── Backend Processing
-│   ├── Langflow Pipeline Simulation
-│   ├── Gemini API Integration
-│   └── Data Processing Engine
-└── Analytics & Export
-    ├── Performance Metrics
-    ├── Conversation History
-    └── Report Generation
-```
-
-## 📊 Performance Metrics
-
-### Benchmarks
-- **Average Response Time**: <1.0 seconds
-- **Pipeline Efficiency**: 94.2%
-- **API Success Rate**: 99.9%
-- **Throughput**: ~15 queries/minute
-
-### Optimization Features
-- **Intelligent Caching**: Reduces redundant API calls
-- **Parallel Processing**: Simultaneous image and text analysis
-- **Error Recovery**: Automatic retry mechanisms
-- **Resource Management**: Optimized memory usage
-
-## 🔒 Security & Privacy
-
-### Data Protection
-- **No Persistent Storage**: Conversations stored only in session memory
-- **Secure API Handling**: Keys encrypted during transmission
-- **Privacy First**: No data retention or external logging
-- **Local Processing**: Image analysis performed client-side when possible
-
-### Best Practices
-- Use environment variables for API keys in production
-- Implement rate limiting for high-traffic deployments
-- Monitor API usage and costs
-- Regular security updates for dependencies
-
-## 📈 Advanced Usage
-
-### Custom Pipeline Configuration
-```python
-# Example: Custom node configuration
-pipeline_config = {
-    "image_processor": {
-        "confidence_threshold": 0.8,
-        "max_objects": 10,
-        "extract_text": True
-    },
-    "text_processor": {
-        "language": "en",
-        "sentiment_analysis": True,
-        "entity_extraction": True
-    }
-}
-```
-
-### Analytics Export
-```python
-# Export conversation data
-conversation_data = assistant.export_history()
-analytics_data = assistant.export_analytics()
-
-# Generate custom reports
-report = assistant.generate_custom_report(
-    include_metrics=True,
-    include_conversations=True,
-    format="markdown"
-)
-```
-
-## 🚀 Deployment
-
-### Local Development
-```bash
-streamlit run app.py --server.port 8501
-```
-
-### Production Deployment
-
-**Docker:**
-```dockerfile
-FROM python:3.9-slim
-COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-EXPOSE 8501
-CMD ["streamlit", "run", "app.py", "--server.headless", "true"]
-```
-
-**Cloud Platforms:**
-- **Streamlit Cloud**: Direct GitHub integration
-- **Heroku**: Use provided Procfile
-- **AWS/GCP/Azure**: Container deployment ready
-
-## 🤝 Contributing
-
-### Development Setup
-1. Fork the repository
-2. Create a feature branch
-3. Install development dependencies: `pip install -r requirements-dev.txt`
-4. Run tests: `pytest tests/`
-5. Submit a pull request
-
-### Code Standards
-- Follow PEP 8 style guidelines
-- Add docstrings for all functions
-- Include unit tests for new features
-- Update documentation as needed
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Google Gemini AI** for advanced language modeling
-- **Streamlit** for the incredible web framework
-- **Langflow** for pipeline architecture inspiration
-- **Plotly** for interactive visualizations
-
-## 📞 Support
-
-### Documentation
-- [Streamlit Documentation](https://docs.streamlit.io/)
-- [Google AI Documentation](https://ai.google.dev/)
-- [Langflow Documentation](https://langflow.org/)
-
-### Issues & Questions
-- Create an issue on GitHub for bugs or feature requests
-- Check existing issues before submitting new ones
-- Provide detailed reproduction steps for bugs
-
-### Community
-- Join our [Discord Server](https://discord.gg/your-server)
-- Follow updates on [Twitter](https://twitter.com/your-handle)
-- Read our [Blog](https://your-blog.com) for tutorials
+> Multimodal Assistant With Langflow Integration — a thoughtfully built LLM-powered conversational application for intelligent, context-aware dialogue.
 
 ---
 
-**Built with ♾️ by Devanik**
+**Topics:** `agentic-ai` · `conversational-ai` · `deep-learning` · `generative-ai` · `langflow` · `large-language-models` · `multimodal-ai` · `tool-use` · `vision-language-model` · `cross-modal-grounding`
 
-*Revolutionizing multimodal AI interactions through innovative pipeline architecture and cutting-edge technology.*
+## Overview
+
+Multimodal Assistant With Langflow Integration is an LLM-powered application that provides a clean, functional interface for interacting with frontier language models. It goes beyond a simple prompt-response wrapper: it maintains conversation memory, supports configurable system prompts for persona and task specialisation, and provides streaming output for a responsive chat experience.
+
+The application supports multiple LLM backends — OpenAI GPT-4o, Google Gemini, Anthropic Claude, and locally-running Ollama models — configurable via environment variables without code changes. This makes it a flexible foundation for a wide range of conversational AI use cases: customer support bots, coding assistants, educational tutors, and domain-specific advisors.
+
+The conversation history is managed with configurable memory: either a simple sliding window buffer (last N messages) or a vector-store-backed semantic memory that retrieves relevant earlier context based on the current query. Both modes are implemented and selectable via the sidebar.
+
+---
+
+## Motivation
+
+Building a production-ready LLM chat application requires more than an API call. Memory, streaming, error handling, rate limit management, and a clean UI each add meaningful complexity. This project implements all of these correctly so that it can serve as a solid, reusable foundation for any conversational AI product built on top of it.
+
+---
+
+## Architecture
+
+```
+User message → Streamlit chat UI
+        │
+  Memory retrieval (buffer or vector)
+        │
+  LLM API call (streamed)
+        │
+  Response rendering + history update
+```
+
+---
+
+## Features
+
+### Multi-Turn Memory
+Conversation history maintained across turns — either as a sliding window buffer or semantic vector retrieval for long-context conversations.
+
+### Streaming Token Output
+LLM responses are streamed character by character to the UI, providing low-latency perceived response time.
+
+### System Prompt Customisation
+Sidebar text area for runtime system prompt editing — change the AI's persona, task focus, or response format without restarting the app.
+
+### Multi-Model Backend
+Switch between OpenAI, Gemini, Claude, and Ollama backends via environment variable or sidebar selector.
+
+### Conversation Export
+Download full conversation history as Markdown or JSON.
+
+### Token Usage Display
+Real-time per-message and session-total token counters in the sidebar.
+
+### Error Handling and Retry
+Graceful handling of API rate limits, timeouts, and model errors with automatic retry and user notification.
+
+### Session Management
+Create, name, switch between, and delete conversation sessions without page reload.
+
+---
+
+## Tech Stack
+
+| Library / Tool | Role | Why This Choice |
+|---|---|---|
+| **Streamlit** | Chat UI | st.chat_message, st.chat_input, sidebar |
+| **OpenAI SDK** | Primary LLM backend | GPT-4o function calling and streaming |
+| **google-generativeai** | Gemini backend | Gemini Pro/Flash streaming API |
+| **python-dotenv** | Config | Environment variable management |
+| **FAISS (optional)** | Vector memory | Semantic conversation history retrieval |
+| **LangChain (optional)** | Memory abstraction | ConversationBufferMemory wrappers |
+
+> **Key packages detected in this repo:** `streamlit` · `google-generativeai` · `pillow` · `pandas` · `plotly`
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.9+ (or Node.js 18+ for TypeScript/JS projects)
+- `pip` or `npm` package manager
+- Relevant API keys (see Configuration section)
+
+### Installation
+
+```bash
+git clone https://github.com/Devanik21/Multimodal-Assistant-with-Langflow-integration.git
+cd Multimodal-Assistant-with-Langflow-integration
+python -m venv venv && source venv/bin/activate
+pip install streamlit openai google-generativeai python-dotenv
+echo 'OPENAI_API_KEY=sk-...' > .env
+streamlit run app.py
+```
+
+---
+
+## Usage
+
+```bash
+streamlit run app.py
+
+# Use Gemini backend
+BACKEND=gemini streamlit run app.py
+
+# Use local Ollama
+BACKEND=ollama MODEL=llama3 streamlit run app.py
+```
+
+---
+
+## Configuration
+
+| Variable | Default | Description |
+|---|---|---|
+| `OPENAI_API_KEY` | `(required for OpenAI)` | OpenAI API key |
+| `GOOGLE_API_KEY` | `(required for Gemini)` | Google API key |
+| `BACKEND` | `openai` | LLM backend: openai, gemini, ollama |
+| `MEMORY_WINDOW` | `10` | Number of messages in sliding window memory |
+
+> Copy `.env.example` to `.env` and populate all required values before running.
+
+---
+
+## Project Structure
+
+```
+Multimodal-Assistant-with-Langflow-integration/
+├── README.md
+├── requirements.txt
+├── app.py
+└── ...
+```
+
+---
+
+## Roadmap
+
+- [ ] RAG mode: chat over uploaded documents with citation
+- [ ] Voice I/O with Whisper and TTS
+- [ ] Multi-agent mode with specialist sub-agents
+- [ ] Docker deployment with Traefik reverse proxy
+- [ ] Persistent storage with SQLite conversation database
+
+---
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome. Please:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'feat: add your feature'`)
+4. Push to your branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+Please follow conventional commit messages and ensure any new code is documented.
+
+---
+
+## Notes
+
+API keys for the configured LLM backend are required. Streaming availability depends on the model and backend. Ollama must be running locally for the Ollama backend to work.
+
+---
+
+## Author
+
+**Devanik Debnath**  
+B.Tech, Electronics & Communication Engineering  
+National Institute of Technology Agartala
+
+[![GitHub](https://img.shields.io/badge/GitHub-Devanik21-black?style=flat-square&logo=github)](https://github.com/Devanik21)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-devanik-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/devanik/)
+
+---
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+*Crafted with curiosity, precision, and a belief that good software is worth building well.*
